@@ -1,25 +1,77 @@
 ﻿#include <iostream>
-using namespace std;
-
+using std::cin;
+using std::cout;
+using std::endl;
+void fill(int size, double  arr[]);
 void fill(int size, int arr[]);
+void fill(int size, long long arr[]);//
+void fill(int size, char arr[]);
+void fill(int size, float  arr[]);
+void print(int size, double  arr[]);
 void print(int size, int arr[]);
+void print(int size, long long arr[]);//
+void print(int size, char arr[]);
+void print(int size, float  arr[]);
+void sortUP(const int size, double  arr[]);
 void sortUP(const int size, int arr[]);
+void sortUP(const int size, long long arr[]);//
+void sortUP(const int size, char arr[]);
+void sortUP(const int size, float  arr[]);
+void sortDOWN(const int size, double  arr[]);
 void sortDOWN(const int size, int arr[]);
+void sortDOWN(const int size, long long arr[]);//
+void sortDOWN(const int size, char arr[]);
+void sortDOWN(const int size, float  arr[]);
+double  sum(const int size, double  arr[]);
 int sum(const int size, int arr[]);
-double average(const int size, int arr[]);
+long long sum(const int size, long long arr[]);//
+char sum(const int size, char arr[]);
+float  sum(const int size, float  arr[]);
+double  average(const int size, double  arr[]);
+double  average(const int size, int arr[]);
+double  average(const int size, long long arr[]);//
+char  average(const int size, char arr[]);
+float  average(const int size, float  arr[]);
+double  minValue(const int size, double  arr[]);
 int minValue(const int size, int arr[]);
+long long minValue(const int size, long long arr[]);//
+char minValue(const int size, char arr[]);
+float  minValue(const int size, float  arr[]);
+double  maxValue(const int size, double  arr[]);
 int maxValue(const int size, int arr[]);
+long long maxValue(const int size, long long arr[]);//
+char maxValue(const int size, char arr[]);
+float maxValue(const int size, float  arr[]);
+void shiftRight(const int size, double  arr[], int number);
 void shiftRight(const int size, int arr[], int number);
+void shiftRight(const int size, long long arr[], int number);//
+void shiftRight(const int size, char arr[], int number);
+void shiftRight(const int size, float  arr[], int number);
+void shiftLeft(const int size, double  arr[], int number);
 void shiftLeft(const int size, int arr[], int number);
+void shiftLeft(const int size, long long arr[], int number);//
+void shiftLeft(const int size, char arr[], int number);
+void shiftLeft(const int size, float  arr[], int number);
 
 
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int size = 7;
+	const int size = 10;
 	int arr[size];
 	int number, choice;
-	cout << "Это домашнее задание на 03.05.22. здесь собраны такие задания как: \n1 - заполнение массива.";
+	//cout << "Это домашнее задание на 06.05.22. Выберите тип массива: 1 int, 2 double, 3 float, 4 long long, 5 char. Ваш вариант: ";
+	//cin >> choice;
+	//switch (choice)
+	//{
+	//case 1:int arr[size]; cout << "Выбран int \n" << endl; break;
+	//case 2:double arr[size]; cout << "Выбран double \n" << endl; break;
+	//case 3:float arr[size]; cout << "Выбран float \n" << endl; break;
+	//case 4:long long arr[size]; cout << "Выбран long long \n" << endl; break;
+	//case 5:char arr[size]; cout << "Выбран char \n" << endl; break;
+	//default:int arr[size]; cout << "Выбрано не верное значение. Програма поставит по умлочанию int \n" << endl; break;
+	//}
+	cout << "Здесь собраны такие задания как: \n1 - заполнение массива ";
 	cout << "\n2 - сортировка по возврастанию ";
 	cout << "\n3 - сортировка по убыванию ";
 	cout << "\n4 - сумма элементов массива ";
@@ -109,10 +161,70 @@ void fill(int size, int arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand()%100;
+		arr[i] = rand();
+	}
+}
+void fill(int size, long long arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand();
+	}
+}
+void fill(int size, double  arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() * 0.001;
+	}
+}
+void fill(int size, float arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() * 0.001;
+	}
+}
+void fill(int size, char arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand();
 	}
 }
 void print(int size, int arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << "\n\n";
+}
+void print(int size, long long arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << "\n\n";
+}
+void print(int size, double  arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << "\n\n";
+}
+void print(int size, float arr[])
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << "\n\n";
+}
+void print(int size, char arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -125,7 +237,71 @@ void sortUP(const int size, int arr[])
 	int buffer;
 	for (int i = 0; i < size; i++)//vozrastanie
 	{
-		for (int j = i+1; j < size; j++)
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] > arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortUP(const int size, long long arr[])
+{
+	long long buffer;
+	for (int i = 0; i < size; i++)//vozrastanie
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] > arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortUP(const int size, double  arr[])
+{
+	double  buffer;
+	for (int i = 0; i < size; i++)//vozrastanie
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] > arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortUP(const int size, float arr[])
+{
+	float buffer;
+	for (int i = 0; i < size; i++)//vozrastanie
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] > arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortUP(const int size, char arr[])
+{
+	char buffer;
+	for (int i = 0; i < size; i++)//vozrastanie
+	{
+		for (int j = i + 1; j < size; j++)
 		{
 			if (arr[i] > arr[j])
 			{
@@ -141,7 +317,71 @@ void sortDOWN(const int size, int arr[])
 	int buffer;
 	for (int i = 0; i < size; i++)//ubivaniu
 	{
-		for (int j = i+1; j < size; j++)
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] < arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortDOWN(const int size, long long arr[])
+{
+	long long buffer;
+	for (int i = 0; i < size; i++)//ubivaniu
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] < arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortDOWN(const int size, double  arr[])
+{
+	double  buffer;
+	for (int i = 0; i < size; i++)//ubivaniu
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] < arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortDOWN(const int size, float arr[])
+{
+	float buffer;
+	for (int i = 0; i < size; i++)//ubivaniu
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[i] < arr[j])
+			{
+				buffer = arr[j];
+				arr[j] = arr[i];
+				arr[i] = buffer;
+			}
+		}
+	}
+}
+void sortDOWN(const int size, char arr[])
+{
+	char buffer;
+	for (int i = 0; i < size; i++)//ubivaniu
+	{
+		for (int j = i + 1; j < size; j++)
 		{
 			if (arr[i] < arr[j])
 			{
@@ -161,13 +401,101 @@ int sum(const int size, int arr[])
 	}
 	return amount;
 }
-double average(const int size, int arr[])
+long long sum(const int size, long long arr[])
+{
+	long long amount = 0;
+	for (int i = 0; i < size; i++)
+	{
+		amount = amount + arr[i];
+	}
+	return amount;
+}
+double  sum(const int size, double  arr[])
+{
+	double  amount = 0;
+	for (int i = 0; i < size; i++)
+	{
+		amount = amount + arr[i];
+	}
+	return amount;
+}
+float sum(const int size, float arr[])
+{
+	float amount = 0;
+	for (int i = 0; i < size; i++)
+	{
+		amount = amount + arr[i];
+	}
+	return amount;
+}
+char sum(const int size, char arr[])
+{
+	char amount = ' ';
+	for (int i = 0; i < size; i++)
+	{
+		amount = amount + arr[i];
+	}
+	return amount;
+}
+double  average(const int size, int arr[])
 {
 	return (double)sum(size, arr) / size;
 }
+double  average(const int size, long long arr[])
+{
+	return (double)sum(size, arr) / size;
+}
+double  average(const int size, double  arr[])
+{
+	return (double)sum(size, arr) / size;
+}
+float  average(const int size, float arr[])
+{
+	return (float)sum(size, arr) / size;
+}
+char  average(const int size, char arr[])
+{
+	return (char)sum(size, arr) / size;
+}
 int minValue(const int size, int arr[])
 {
-	int min=arr[0];
+	int min = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+long long minValue(const int size, long long arr[])
+{
+	long long min = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+double  minValue(const int size, double  arr[])
+{
+	double  min = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+float minValue(const int size, float arr[])
+{
+	float min = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+char minValue(const int size, char arr[])
+{
+	char min = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] < min)min = arr[i];
@@ -176,7 +504,43 @@ int minValue(const int size, int arr[])
 }
 int maxValue(const int size, int arr[])
 {
-	int max=arr[0];
+	int max = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+long long maxValue(const int size, long long arr[])
+{
+	long long max = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+double  maxValue(const int size, double  arr[])
+{
+	double  max = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+float maxValue(const int size, float arr[])
+{
+	float max = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+char maxValue(const int size, char arr[])
+{
+	char max = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] > max) max = arr[i];
@@ -196,11 +560,115 @@ void shiftRight(const int size, int arr[], int number)
 		number--;
 	}
 }
+void shiftRight(const int size, long long arr[], int number)
+{
+	while (number > 0)
+	{
+		long long buffer = arr[size - 1];
+		for (int i = size - 1; i > 0; i--)
+		{
+			arr[i] = arr[i - 1];
+		}
+		arr[0] = buffer;
+		number--;
+	}
+}
+void shiftRight(const int size, double  arr[], int number)
+{
+	while (number > 0)
+	{
+		double  buffer = arr[size - 1];
+		for (int i = size - 1; i > 0; i--)
+		{
+			arr[i] = arr[i - 1];
+		}
+		arr[0] = buffer;
+		number--;
+	}
+}
+void shiftRight(const int size, float arr[], int number)
+{
+	while (number > 0)
+	{
+		float buffer = arr[size - 1];
+		for (int i = size - 1; i > 0; i--)
+		{
+			arr[i] = arr[i - 1];
+		}
+		arr[0] = buffer;
+		number--;
+	}
+}
+void shiftRight(const int size, char arr[], int number)
+{
+	while (number > 0)
+	{
+		char buffer = arr[size - 1];
+		for (int i = size - 1; i > 0; i--)
+		{
+			arr[i] = arr[i - 1];
+		}
+		arr[0] = buffer;
+		number--;
+	}
+}
 void shiftLeft(const int size, int arr[], int number)
 {
 	while (number > 0)
 	{
 		int buffer = arr[0];
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[size - 1] = buffer;
+		number--;
+	}
+}
+void shiftLeft(const int size, long long arr[], int number)
+{
+	while (number > 0)
+	{
+		long long buffer = arr[0];
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[size - 1] = buffer;
+		number--;
+	}
+}
+void shiftLeft(const int size, double  arr[], int number)
+{
+	while (number > 0)
+	{
+		double  buffer = arr[0];
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[size - 1] = buffer;
+		number--;
+	}
+}
+void shiftLeft(const int size, float arr[], int number)
+{
+	while (number > 0)
+	{
+		float buffer = arr[0];
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[size - 1] = buffer;
+		number--;
+	}
+}
+void shiftLeft(const int size, char arr[], int number)
+{
+	while (number > 0)
+	{
+		char buffer = arr[0];
 		for (int i = 0; i < size; i++)
 		{
 			arr[i] = arr[i + 1];
