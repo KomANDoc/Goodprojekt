@@ -2,56 +2,56 @@
 using std::cin;
 using std::cout;
 using std::endl;
-void fill(int size, double  arr[]);
 void fill(int size, int arr[]);
 void fill(int size, long long arr[]);//
-void fill(int size, char arr[]);
 void fill(int size, float  arr[]);
-void print(int size, double  arr[]);
+void fill(int size, double  arr[]);
+void fill(int size, char arr[]);
 void print(int size, int arr[]);
 void print(int size, long long arr[]);//
-void print(int size, char arr[]);
 void print(int size, float  arr[]);
-void sortUP(const int size, double  arr[]);
+void print(int size, double  arr[]);
+void print(int size, char arr[]);
 void sortUP(const int size, int arr[]);
 void sortUP(const int size, long long arr[]);//
-void sortUP(const int size, char arr[]);
 void sortUP(const int size, float  arr[]);
-void sortDOWN(const int size, double  arr[]);
+void sortUP(const int size, double  arr[]);
+void sortUP(const int size, char arr[]);
 void sortDOWN(const int size, int arr[]);
 void sortDOWN(const int size, long long arr[]);//
-void sortDOWN(const int size, char arr[]);
 void sortDOWN(const int size, float  arr[]);
-double  sum(const int size, double  arr[]);
+void sortDOWN(const int size, double  arr[]);
+void sortDOWN(const int size, char arr[]);
 int sum(const int size, int arr[]);
 long long sum(const int size, long long arr[]);//
-char sum(const int size, char arr[]);
 float  sum(const int size, float  arr[]);
-double  average(const int size, double  arr[]);
+double  sum(const int size, double  arr[]);
+char sum(const int size, char arr[]);
 double  average(const int size, int arr[]);
 double  average(const int size, long long arr[]);//
-char  average(const int size, char arr[]);
 float  average(const int size, float  arr[]);
-double  minValue(const int size, double  arr[]);
+double  average(const int size, double  arr[]);
+char  average(const int size, char arr[]);
 int minValue(const int size, int arr[]);
 long long minValue(const int size, long long arr[]);//
-char minValue(const int size, char arr[]);
 float  minValue(const int size, float  arr[]);
-double  maxValue(const int size, double  arr[]);
+double  minValue(const int size, double  arr[]);
+char minValue(const int size, char arr[]);
 int maxValue(const int size, int arr[]);
 long long maxValue(const int size, long long arr[]);//
-char maxValue(const int size, char arr[]);
 float maxValue(const int size, float  arr[]);
-void shiftRight(const int size, double  arr[], int number);
+double  maxValue(const int size, double  arr[]);
+char maxValue(const int size, char arr[]);
 void shiftRight(const int size, int arr[], int number);
 void shiftRight(const int size, long long arr[], int number);//
-void shiftRight(const int size, char arr[], int number);
 void shiftRight(const int size, float  arr[], int number);
-void shiftLeft(const int size, double  arr[], int number);
+void shiftRight(const int size, double  arr[], int number);
+void shiftRight(const int size, char arr[], int number);
 void shiftLeft(const int size, int arr[], int number);
 void shiftLeft(const int size, long long arr[], int number);//
-void shiftLeft(const int size, char arr[], int number);
 void shiftLeft(const int size, float  arr[], int number);
+void shiftLeft(const int size, double  arr[], int number);
+void shiftLeft(const int size, char arr[], int number);
 
 
 void main()
@@ -160,14 +160,14 @@ void fill(int size, long long arr[])
 		arr[i] = rand();
 	}
 }
-void fill(int size, double  arr[])
+void fill(int size, float arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
 		arr[i] = rand() * 0.001;
 	}
 }
-void fill(int size, float arr[])
+void fill(int size, double  arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -197,7 +197,7 @@ void print(int size, long long arr[])
 	}
 	cout << "\n\n";
 }
-void print(int size, double  arr[])
+void print(int size, float arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -205,7 +205,7 @@ void print(int size, double  arr[])
 	}
 	cout << "\n\n";
 }
-void print(int size, float arr[])
+void print(int size, double  arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -253,9 +253,9 @@ void sortUP(const int size, long long arr[])
 		}
 	}
 }
-void sortUP(const int size, double  arr[])
+void sortUP(const int size, float arr[])
 {
-	double  buffer;
+	float buffer;
 	for (int i = 0; i < size; i++)//vozrastanie
 	{
 		for (int j = i + 1; j < size; j++)
@@ -269,9 +269,9 @@ void sortUP(const int size, double  arr[])
 		}
 	}
 }
-void sortUP(const int size, float arr[])
+void sortUP(const int size, double  arr[])
 {
-	float buffer;
+	double  buffer;
 	for (int i = 0; i < size; i++)//vozrastanie
 	{
 		for (int j = i + 1; j < size; j++)
@@ -333,9 +333,9 @@ void sortDOWN(const int size, long long arr[])
 		}
 	}
 }
-void sortDOWN(const int size, double  arr[])
+void sortDOWN(const int size, float arr[])
 {
-	double  buffer;
+	float buffer;
 	for (int i = 0; i < size; i++)//ubivaniu
 	{
 		for (int j = i + 1; j < size; j++)
@@ -349,9 +349,9 @@ void sortDOWN(const int size, double  arr[])
 		}
 	}
 }
-void sortDOWN(const int size, float arr[])
+void sortDOWN(const int size, double  arr[])
 {
-	float buffer;
+	double  buffer;
 	for (int i = 0; i < size; i++)//ubivaniu
 	{
 		for (int j = i + 1; j < size; j++)
@@ -399,18 +399,18 @@ long long sum(const int size, long long arr[])
 	}
 	return amount;
 }
-double  sum(const int size, double  arr[])
+float sum(const int size, float arr[])
 {
-	double  amount = 0;
+	float amount = 0;
 	for (int i = 0; i < size; i++)
 	{
 		amount = amount + arr[i];
 	}
 	return amount;
 }
-float sum(const int size, float arr[])
+double  sum(const int size, double  arr[])
 {
-	float amount = 0;
+	double  amount = 0;
 	for (int i = 0; i < size; i++)
 	{
 		amount = amount + arr[i];
@@ -434,13 +434,13 @@ double  average(const int size, long long arr[])
 {
 	return (double)sum(size, arr) / size;
 }
-double  average(const int size, double  arr[])
-{
-	return (double)sum(size, arr) / size;
-}
 float  average(const int size, float arr[])
 {
 	return (float)sum(size, arr) / size;
+}
+double  average(const int size, double  arr[])
+{
+	return (double)sum(size, arr) / size;
 }
 char  average(const int size, char arr[])
 {
@@ -464,18 +464,18 @@ long long minValue(const int size, long long arr[])
 	}
 	return min;
 }
-double  minValue(const int size, double  arr[])
+float minValue(const int size, float arr[])
 {
-	double  min = arr[0];
+	float min = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] < min)min = arr[i];
 	}
 	return min;
 }
-float minValue(const int size, float arr[])
+double  minValue(const int size, double  arr[])
 {
-	float min = arr[0];
+	double  min = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] < min)min = arr[i];
@@ -509,18 +509,18 @@ long long maxValue(const int size, long long arr[])
 	}
 	return max;
 }
-double  maxValue(const int size, double  arr[])
+float maxValue(const int size, float arr[])
 {
-	double  max = arr[0];
+	float max = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] > max) max = arr[i];
 	}
 	return max;
 }
-float maxValue(const int size, float arr[])
+double  maxValue(const int size, double  arr[])
 {
-	float max = arr[0];
+	double  max = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] > max) max = arr[i];
@@ -562,11 +562,11 @@ void shiftRight(const int size, long long arr[], int number)
 		number--;
 	}
 }
-void shiftRight(const int size, double  arr[], int number)
+void shiftRight(const int size, float arr[], int number)
 {
 	while (number > 0)
 	{
-		double  buffer = arr[size - 1];
+		float buffer = arr[size - 1];
 		for (int i = size - 1; i > 0; i--)
 		{
 			arr[i] = arr[i - 1];
@@ -575,11 +575,11 @@ void shiftRight(const int size, double  arr[], int number)
 		number--;
 	}
 }
-void shiftRight(const int size, float arr[], int number)
+void shiftRight(const int size, double  arr[], int number)
 {
 	while (number > 0)
 	{
-		float buffer = arr[size - 1];
+		double  buffer = arr[size - 1];
 		for (int i = size - 1; i > 0; i--)
 		{
 			arr[i] = arr[i - 1];
@@ -627,11 +627,11 @@ void shiftLeft(const int size, long long arr[], int number)
 		number--;
 	}
 }
-void shiftLeft(const int size, double  arr[], int number)
+void shiftLeft(const int size, float arr[], int number)
 {
 	while (number > 0)
 	{
-		double  buffer = arr[0];
+		float buffer = arr[0];
 		for (int i = 0; i < size; i++)
 		{
 			arr[i] = arr[i + 1];
@@ -640,11 +640,11 @@ void shiftLeft(const int size, double  arr[], int number)
 		number--;
 	}
 }
-void shiftLeft(const int size, float arr[], int number)
+void shiftLeft(const int size, double  arr[], int number)
 {
 	while (number > 0)
 	{
-		float buffer = arr[0];
+		double  buffer = arr[0];
 		for (int i = 0; i < size; i++)
 		{
 			arr[i] = arr[i + 1];
