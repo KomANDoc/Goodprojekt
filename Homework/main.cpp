@@ -60,17 +60,6 @@ void main()
 	const int size = 10;
 	int arr[size];
 	int number, choice;
-	//cout << "Это домашнее задание на 06.05.22. Выберите тип массива: 1 int, 2 double, 3 float, 4 long long, 5 char. Ваш вариант: ";
-	//cin >> choice;
-	//switch (choice)
-	//{
-	//case 1:int arr[size]; cout << "Выбран int \n" << endl; break;
-	//case 2:double arr[size]; cout << "Выбран double \n" << endl; break;
-	//case 3:float arr[size]; cout << "Выбран float \n" << endl; break;
-	//case 4:long long arr[size]; cout << "Выбран long long \n" << endl; break;
-	//case 5:char arr[size]; cout << "Выбран char \n" << endl; break;
-	//default:int arr[size]; cout << "Выбрано не верное значение. Програма поставит по умлочанию int \n" << endl; break;
-	//}
 	cout << "Здесь собраны такие задания как: \n1 - заполнение массива ";
 	cout << "\n2 - сортировка по возврастанию ";
 	cout << "\n3 - сортировка по убыванию ";
