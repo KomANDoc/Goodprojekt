@@ -9,66 +9,44 @@ void fill(int size, float  arr[]);
 void fill(int size, double  arr[]);
 void fill(int size, char arr[]);
 
-void print(int size, int arr[]);//выводит массив на экран
-void print(int size, long long arr[]);
-void print(int size, float  arr[]);
-void print(int size, double  arr[]);
-void print(int size, char arr[]);
+template <typename T>
+void print( const int size, T arr[]);//выводит массив на экран
 
-void sortUP(const int size, int arr[]);//сортирует по возврастанию
-void sortUP(const int size, long long arr[]);
-void sortUP(const int size, float  arr[]);
-void sortUP(const int size, double  arr[]);
-void sortUP(const int size, char arr[]);
+template <typename T>
+void sortUP(const int size, T arr[]);//сортирует по возврастанию
 
-void sortDOWN(const int size, int arr[]);//сортирует по убыванию
-void sortDOWN(const int size, long long arr[]);
-void sortDOWN(const int size, float  arr[]);
-void sortDOWN(const int size, double  arr[]);
-void sortDOWN(const int size, char arr[]);
+template <typename T>
+void sortDOWN(const int size, T arr[]);//сортирует по убыванию
 
-int sum(const int size, int arr[]);//суммирует числа массива
-long long sum(const int size, long long arr[]);
-float  sum(const int size, float  arr[]);
-double  sum(const int size, double  arr[]);
-char sum(const int size, char arr[]);
+template <typename T>
+T sum(const int size, T arr[]);//суммирует числа массива
 
-double  average(const int size, int arr[]);//вычисляет среднее арифметическое 
-double  average(const int size, long long arr[]);
-float  average(const int size, float  arr[]);
-double  average(const int size, double  arr[]);
-char  average(const int size, char arr[]);
+template <typename T>
+T average(const int size, T arr[]);//вычисляет среднее арифметическое 
 
-int minValue(const int size, int arr[]);//минимальное значение массива
-long long minValue(const int size, long long arr[]);
-float  minValue(const int size, float  arr[]);
-double  minValue(const int size, double  arr[]);
-char minValue(const int size, char arr[]);
 
-int maxValue(const int size, int arr[]);//максимальное значение массива
-long long maxValue(const int size, long long arr[]);
-float maxValue(const int size, float  arr[]);
-double  maxValue(const int size, double  arr[]);
-char maxValue(const int size, char arr[]);
+template <typename T>
+T minValue(const int size, T arr[]);//минимальное значение массива
 
-void shiftRight(const int size, int arr[], int number);//сдвиг массива вправо
-void shiftRight(const int size, long long arr[], int number);
-void shiftRight(const int size, float  arr[], int number);
-void shiftRight(const int size, double  arr[], int number);
-void shiftRight(const int size, char arr[], int number);
 
-void shiftLeft(const int size, int arr[], int number);//сдвиг массива влево
-void shiftLeft(const int size, long long arr[], int number);
-void shiftLeft(const int size, float  arr[], int number);
-void shiftLeft(const int size, double  arr[], int number);
-void shiftLeft(const int size, char arr[], int number);
+template <typename T>
+T maxValue(const int size, T arr[]);//максимальное значение массива
+
+
+template <typename T>
+void shiftRight(const int size, T arr[], int number);//сдвиг массива вправо
+
+
+template <typename T>
+void shiftLeft(const int size, T arr[], int number);//сдвиг массива влево
+
 
 
 void main()
 {
 	setlocale(LC_ALL, "RU");
 	const int size = 10;
-	int arr[size];//нужно выбрать тип. возможены: int, long long, float, double, char
+	double arr[size];//нужно выбрать тип. возможены: int, long long, float, double, char
 	int number, choice;
 	cout << "Здесь собраны такие задания как: \n1 - заполнение массива ";
 	cout << "\n2 - сортировка по возврастанию ";
@@ -192,7 +170,7 @@ void fill(int size, char arr[])
 	}
 }
 
-void print(int size, int arr[])
+template <typename T> void print( const int size, T arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -200,42 +178,9 @@ void print(int size, int arr[])
 	}
 	cout << "\n\n";
 }
-void print(int size, long long arr[])
+template <typename T> void sortUP(const int size, T arr[])
 {
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << "\n\n";
-}
-void print(int size, float arr[])
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << "\n\n";
-}
-void print(int size, double  arr[])
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << "\n\n";
-}
-void print(int size, char arr[])
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << "\n\n";
-}
-
-void sortUP(const int size, int arr[])
-{
-	int buffer;
+	T buffer;
 	for (int i = 0; i < size; i++)//vozrastanie
 	{
 		for (int j = i + 1; j < size; j++)
@@ -249,72 +194,7 @@ void sortUP(const int size, int arr[])
 		}
 	}
 }
-void sortUP(const int size, long long arr[])
-{
-	long long buffer;
-	for (int i = 0; i < size; i++)//vozrastanie
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] > arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortUP(const int size, float arr[])
-{
-	float buffer;
-	for (int i = 0; i < size; i++)//vozrastanie
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] > arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortUP(const int size, double  arr[])
-{
-	double  buffer;
-	for (int i = 0; i < size; i++)//vozrastanie
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] > arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortUP(const int size, char arr[])
-{
-	char buffer;
-	for (int i = 0; i < size; i++)//vozrastanie
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] > arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-
-void sortDOWN(const int size, int arr[])
+template <typename T> void sortDOWN(const int size, T arr[])
 {
 	int buffer;
 	for (int i = 0; i < size; i++)//ubivaniu
@@ -330,139 +210,20 @@ void sortDOWN(const int size, int arr[])
 		}
 	}
 }
-void sortDOWN(const int size, long long arr[])
+template <typename T> T sum(const int size, T arr[])
 {
-	long long buffer;
-	for (int i = 0; i < size; i++)//ubivaniu
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] < arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortDOWN(const int size, float arr[])
-{
-	float buffer;
-	for (int i = 0; i < size; i++)//ubivaniu
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] < arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortDOWN(const int size, double  arr[])
-{
-	double  buffer;
-	for (int i = 0; i < size; i++)//ubivaniu
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] < arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-void sortDOWN(const int size, char arr[])
-{
-	char buffer;
-	for (int i = 0; i < size; i++)//ubivaniu
-	{
-		for (int j = i + 1; j < size; j++)
-		{
-			if (arr[i] < arr[j])
-			{
-				buffer = arr[j];
-				arr[j] = arr[i];
-				arr[i] = buffer;
-			}
-		}
-	}
-}
-
-int sum(const int size, int arr[])
-{
-	int amount = 0;
+	T amount = 0;
 	for (int i = 0; i < size; i++)
 	{
 		amount = amount + arr[i];
 	}
 	return amount;
 }
-long long sum(const int size, long long arr[])
-{
-	long long amount = 0;
-	for (int i = 0; i < size; i++)
-	{
-		amount = amount + arr[i];
-	}
-	return amount;
-}
-float sum(const int size, float arr[])
-{
-	float amount = 0;
-	for (int i = 0; i < size; i++)
-	{
-		amount = amount + arr[i];
-	}
-	return amount;
-}
-double  sum(const int size, double  arr[])
-{
-	double  amount = 0;
-	for (int i = 0; i < size; i++)
-	{
-		amount = amount + arr[i];
-	}
-	return amount;
-}
-char sum(const int size, char arr[])
-{
-	char amount = ' ';
-	for (int i = 0; i < size; i++)
-	{
-		amount = amount + arr[i];
-	}
-	return amount;
-}
-
-double  average(const int size, int arr[])
+template <typename T> T average(const int size, T arr[])
 {
 	return (double)sum(size, arr) / size;
 }
-double  average(const int size, long long arr[])
-{
-	return (double)sum(size, arr) / size;
-}
-float  average(const int size, float arr[])
-{
-	return (float)sum(size, arr) / size;
-}
-double  average(const int size, double  arr[])
-{
-	return (double)sum(size, arr) / size;
-}
-char  average(const int size, char arr[])
-{
-	return (char)sum(size, arr) / size;
-}
-
-int minValue(const int size, int arr[])
+template <typename T> T minValue(const int size, T arr[])
 {
 	int min = arr[0];
 	for (int i = 0; i < size; i++)
@@ -471,44 +232,7 @@ int minValue(const int size, int arr[])
 	}
 	return min;
 }
-long long minValue(const int size, long long arr[])
-{
-	long long min = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] < min)min = arr[i];
-	}
-	return min;
-}
-float minValue(const int size, float arr[])
-{
-	float min = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] < min)min = arr[i];
-	}
-	return min;
-}
-double  minValue(const int size, double  arr[])
-{
-	double  min = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] < min)min = arr[i];
-	}
-	return min;
-}
-char minValue(const int size, char arr[])
-{
-	char min = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] < min)min = arr[i];
-	}
-	return min;
-}
-
-int maxValue(const int size, int arr[])
+template <typename T> T maxValue(const int size, T arr[])
 {
 	int max = arr[0];
 	for (int i = 0; i < size; i++)
@@ -517,44 +241,7 @@ int maxValue(const int size, int arr[])
 	}
 	return max;
 }
-long long maxValue(const int size, long long arr[])
-{
-	long long max = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
-float maxValue(const int size, float arr[])
-{
-	float max = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
-double  maxValue(const int size, double  arr[])
-{
-	double  max = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
-char maxValue(const int size, char arr[])
-{
-	char max = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
-
-void shiftRight(const int size, int arr[], int number)
+template <typename T> void shiftRight(const int size, T arr[], int number)
 {
 	while (number > 0)
 	{
@@ -567,60 +254,7 @@ void shiftRight(const int size, int arr[], int number)
 		number--;
 	}
 }
-void shiftRight(const int size, long long arr[], int number)
-{
-	while (number > 0)
-	{
-		long long buffer = arr[size - 1];
-		for (int i = size - 1; i > 0; i--)
-		{
-			arr[i] = arr[i - 1];
-		}
-		arr[0] = buffer;
-		number--;
-	}
-}
-void shiftRight(const int size, float arr[], int number)
-{
-	while (number > 0)
-	{
-		float buffer = arr[size - 1];
-		for (int i = size - 1; i > 0; i--)
-		{
-			arr[i] = arr[i - 1];
-		}
-		arr[0] = buffer;
-		number--;
-	}
-}
-void shiftRight(const int size, double  arr[], int number)
-{
-	while (number > 0)
-	{
-		double  buffer = arr[size - 1];
-		for (int i = size - 1; i > 0; i--)
-		{
-			arr[i] = arr[i - 1];
-		}
-		arr[0] = buffer;
-		number--;
-	}
-}
-void shiftRight(const int size, char arr[], int number)
-{
-	while (number > 0)
-	{
-		char buffer = arr[size - 1];
-		for (int i = size - 1; i > 0; i--)
-		{
-			arr[i] = arr[i - 1];
-		}
-		arr[0] = buffer;
-		number--;
-	}
-}
-
-void shiftLeft(const int size, int arr[], int number)
+template <typename T> void shiftLeft(const int size, T arr[], int number)
 {
 	/*while (number > 0)
 	{
@@ -633,58 +267,4 @@ void shiftLeft(const int size, int arr[], int number)
 		number--;
 	}*/
 	shiftRight(size, arr, size - number);
-}
-void shiftLeft(const int size, long long arr[], int number)
-{
-	/*while (number > 0)
-	{
-		long long buffer = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = arr[i + 1];
-		}
-		arr[size - 1] = buffer;
-		number--;
-	}
-	*/
-	shiftRight(size, arr, size - number);
-}
-void shiftLeft(const int size, float arr[], int number)
-{
-	while (number > 0)
-	{
-		float buffer = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = arr[i + 1];
-		}
-		arr[size - 1] = buffer;
-		number--;
-	}
-}
-void shiftLeft(const int size, double  arr[], int number)
-{
-	while (number > 0)
-	{
-		double  buffer = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = arr[i + 1];
-		}
-		arr[size - 1] = buffer;
-		number--;
-	}
-}
-void shiftLeft(const int size, char arr[], int number)
-{
-	while (number > 0)
-	{
-		char buffer = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = arr[i + 1];
-		}
-		arr[size - 1] = buffer;
-		number--;
-	}
 }
