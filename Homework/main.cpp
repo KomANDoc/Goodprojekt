@@ -164,14 +164,14 @@ void fill(int size, float arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = (double)rand() / 1000;
+		arr[i] = (float)rand() / 1000;
 	}
 }
 void fill(int size, double  arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand() * 0.001;
+		arr[i] = (double)rand() / 1000;
 	}
 }
 void fill(int size, char arr[])
@@ -303,6 +303,7 @@ void sortUP(const int size, char arr[])
 		}
 	}
 }
+
 void sortDOWN(const int size, int arr[])
 {
 	int buffer;
