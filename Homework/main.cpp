@@ -1,7 +1,4 @@
-﻿#include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+﻿#include "stdafx.h"
 
 void fill(int size, int arr[]);//заполняет массив
 void fill(int size, long long arr[]);
@@ -538,15 +535,6 @@ float maxValue(const int size, float arr[])
 double  maxValue(const int size, double  arr[])
 {
 	double  max = arr[0];
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
-char maxValue(const int size, char arr[])
-{
-	char max = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] > max) max = arr[i];
