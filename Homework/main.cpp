@@ -1,65 +1,10 @@
 ﻿#include "stdafx.h"
-
-void fill(int size, int arr[]);//заполняет массив
-void fill(int size, long long arr[]);
-void fill(int size, float  arr[]);
-void fill(int size, double  arr[]);
-void fill(int size, char arr[]);
-
-void print(int size, int arr[]);//выводит массив на экран
-void print(int size, long long arr[]);
-void print(int size, float  arr[]);
-void print(int size, double  arr[]);
-void print(int size, char arr[]);
-
-void sortUP(const int size, int arr[]);//сортирует по возврастанию
-void sortUP(const int size, long long arr[]);
-void sortUP(const int size, float  arr[]);
-void sortUP(const int size, double  arr[]);
-void sortUP(const int size, char arr[]);
-
-void sortDOWN(const int size, int arr[]);//сортирует по убыванию
-void sortDOWN(const int size, long long arr[]);
-void sortDOWN(const int size, float  arr[]);
-void sortDOWN(const int size, double  arr[]);
-void sortDOWN(const int size, char arr[]);
-
-int sum(const int size, int arr[]);//суммирует числа массива
-long long sum(const int size, long long arr[]);
-float  sum(const int size, float  arr[]);
-double  sum(const int size, double  arr[]);
-char sum(const int size, char arr[]);
-
-double  average(const int size, int arr[]);//вычисляет среднее арифметическое 
-double  average(const int size, long long arr[]);
-float  average(const int size, float  arr[]);
-double  average(const int size, double  arr[]);
-char  average(const int size, char arr[]);
-
-int minValue(const int size, int arr[]);//минимальное значение массива
-long long minValue(const int size, long long arr[]);
-float  minValue(const int size, float  arr[]);
-double  minValue(const int size, double  arr[]);
-char minValue(const int size, char arr[]);
-
-int maxValue(const int size, int arr[]);//максимальное значение массива
-long long maxValue(const int size, long long arr[]);
-float maxValue(const int size, float  arr[]);
-double  maxValue(const int size, double  arr[]);
-char maxValue(const int size, char arr[]);
-
-void shiftRight(const int size, int arr[], int number);//сдвиг массива вправо
-void shiftRight(const int size, long long arr[], int number);
-void shiftRight(const int size, float  arr[], int number);
-void shiftRight(const int size, double  arr[], int number);
-void shiftRight(const int size, char arr[], int number);
-
-void shiftLeft(const int size, int arr[], int number);//сдвиг массива влево
-void shiftLeft(const int size, long long arr[], int number);
-void shiftLeft(const int size, float  arr[], int number);
-void shiftLeft(const int size, double  arr[], int number);
-void shiftLeft(const int size, char arr[], int number);
-
+#include "Fill.h"
+#include "Print.h"
+#include "SortUp.h"
+#include "SortDown.h"
+#include "Statistics.h"
+#include "Shift.h"
 
 void main()
 {
@@ -535,6 +480,15 @@ float maxValue(const int size, float arr[])
 double  maxValue(const int size, double  arr[])
 {
 	double  max = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+char  maxValue(const int size, char  arr[])
+{
+	char  max = arr[0];
 	for (int i = 0; i < size; i++)
 	{
 		if (arr[i] > max) max = arr[i];
