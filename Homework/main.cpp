@@ -2,53 +2,63 @@
 using std::cin;
 using std::cout;
 using std::endl;
-void fill(int size, int arr[]);
-void fill(int size, long long arr[]);//
+
+void fill(int size, int arr[]);//заполняет массив
+void fill(int size, long long arr[]);
 void fill(int size, float  arr[]);
 void fill(int size, double  arr[]);
 void fill(int size, char arr[]);
-void print(int size, int arr[]);
-void print(int size, long long arr[]);//
+
+void print(int size, int arr[]);//выводит массив на экран
+void print(int size, long long arr[]);
 void print(int size, float  arr[]);
 void print(int size, double  arr[]);
 void print(int size, char arr[]);
-void sortUP(const int size, int arr[]);
-void sortUP(const int size, long long arr[]);//
+
+void sortUP(const int size, int arr[]);//сортирует по возврастанию
+void sortUP(const int size, long long arr[]);
 void sortUP(const int size, float  arr[]);
 void sortUP(const int size, double  arr[]);
 void sortUP(const int size, char arr[]);
-void sortDOWN(const int size, int arr[]);
-void sortDOWN(const int size, long long arr[]);//
+
+void sortDOWN(const int size, int arr[]);//сортирует по убыванию
+void sortDOWN(const int size, long long arr[]);
 void sortDOWN(const int size, float  arr[]);
 void sortDOWN(const int size, double  arr[]);
 void sortDOWN(const int size, char arr[]);
-int sum(const int size, int arr[]);
-long long sum(const int size, long long arr[]);//
+
+int sum(const int size, int arr[]);//суммирует числа массива
+long long sum(const int size, long long arr[]);
 float  sum(const int size, float  arr[]);
 double  sum(const int size, double  arr[]);
 char sum(const int size, char arr[]);
-double  average(const int size, int arr[]);
-double  average(const int size, long long arr[]);//
+
+double  average(const int size, int arr[]);//вычисляет среднее арифметическое 
+double  average(const int size, long long arr[]);
 float  average(const int size, float  arr[]);
 double  average(const int size, double  arr[]);
 char  average(const int size, char arr[]);
-int minValue(const int size, int arr[]);
-long long minValue(const int size, long long arr[]);//
+
+int minValue(const int size, int arr[]);//минимальное значение массива
+long long minValue(const int size, long long arr[]);
 float  minValue(const int size, float  arr[]);
 double  minValue(const int size, double  arr[]);
 char minValue(const int size, char arr[]);
-int maxValue(const int size, int arr[]);
-long long maxValue(const int size, long long arr[]);//
+
+int maxValue(const int size, int arr[]);//максимальное значение массива
+long long maxValue(const int size, long long arr[]);
 float maxValue(const int size, float  arr[]);
 double  maxValue(const int size, double  arr[]);
 char maxValue(const int size, char arr[]);
-void shiftRight(const int size, int arr[], int number);
-void shiftRight(const int size, long long arr[], int number);//
+
+void shiftRight(const int size, int arr[], int number);//сдвиг массива вправо
+void shiftRight(const int size, long long arr[], int number);
 void shiftRight(const int size, float  arr[], int number);
 void shiftRight(const int size, double  arr[], int number);
 void shiftRight(const int size, char arr[], int number);
-void shiftLeft(const int size, int arr[], int number);
-void shiftLeft(const int size, long long arr[], int number);//
+
+void shiftLeft(const int size, int arr[], int number);//сдвиг массива влево
+void shiftLeft(const int size, long long arr[], int number);
 void shiftLeft(const int size, float  arr[], int number);
 void shiftLeft(const int size, double  arr[], int number);
 void shiftLeft(const int size, char arr[], int number);
@@ -56,9 +66,9 @@ void shiftLeft(const int size, char arr[], int number);
 
 void main()
 {
-	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "RU");
 	const int size = 10;
-	int arr[size];
+	int arr[size];//нужно выбрать тип. возможены: int, long long, float, double, char
 	int number, choice;
 	cout << "Здесь собраны такие задания как: \n1 - заполнение массива ";
 	cout << "\n2 - сортировка по возврастанию ";
@@ -75,10 +85,9 @@ void main()
 		cout << "Укажите нужное задание: "; cin >> choice; cout << "\n";
 		switch (choice)
 		{
-		case 1:	cout << "Заплонение случайными числами." << endl;
-			cout << "До: ";
+		case 1:	cout << "Заплонение случайными числами. До: " << endl;
 			print(size, arr);
-			cout << "После: ";
+			cout << "Заплонение случайными числами. После: " << endl;
 			fill(size, arr);
 			print(size, arr);
 			break;
@@ -99,41 +108,42 @@ void main()
 			print(size, arr);
 			break;
 			///
-		case 4:	fill(size, arr);
+		case 4:	cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 			cout << "Сумма элементов масива: " << sum(size, arr) << "\n\n";
 			break;
 			///
-		case 5:	fill(size, arr);
+		case 5:	cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 			cout << "Среднее арифметическое массива: " << average(size, arr) << "\n\n";
 			break;
 			///
-		case 6:	fill(size, arr);
+		case 6:	cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 			cout << "Самое маленькое значение массива: " << minValue(size, arr) << "\n\n";
 			break;
 			///
-		case 7:	fill(size, arr);
+		case 7:	cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 			cout << "Самое большое значение массива: " << maxValue(size, arr) << "\n\n";
 			break;
 			///
-		case 8: fill(size, arr);//новый массив для сдвига направо
+		case 8: cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 
-			cout << "Введите колисество сдвигова вправо: "; cin >> number;
+			cout << "Введите колисество сдвигова вправо: "; cin >> number; cout << endl;
 			shiftRight(size, arr, number);
 			print(size, arr);
 			break;
 			///
-		case 9:	fill(size, arr);//новый массив для сдвига налево
+		case 9:	cout << "Массив:\n\n"; fill(size, arr);
 			print(size, arr);
 
-			cout << "Введите количество сдвигов влево: "; cin >> number;
+			cout << "Введите количество сдвигов влево: "; cin >> number; cout << endl;
 			shiftLeft(size, arr, number);
 			print(size, arr);
 			break;
+			///
 		default: cout << "\nВыбран неверный номер задания." << endl;
 		}
 		cout << "Запустить программу снова - 1 \nВыйти из программы - 0 \nВыбор: ";cin >> choice;
@@ -150,7 +160,7 @@ void fill(int size, int arr[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand()%100;
+		arr[i] = rand() % 100;
 	}
 }
 void fill(int size, long long arr[])
@@ -626,7 +636,7 @@ void shiftLeft(const int size, int arr[], int number)
 }
 void shiftLeft(const int size, long long arr[], int number)
 {
-	while (number > 0)
+	/*while (number > 0)
 	{
 		long long buffer = arr[0];
 		for (int i = 0; i < size; i++)
@@ -636,6 +646,8 @@ void shiftLeft(const int size, long long arr[], int number)
 		arr[size - 1] = buffer;
 		number--;
 	}
+	*/
+	shiftRight(size, arr, size - number);
 }
 void shiftLeft(const int size, float arr[], int number)
 {
